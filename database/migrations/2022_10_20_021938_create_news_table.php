@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('img_2');
             $table->string('img_3');
             $table->string('excerpt');
+            $table->string('subcapt');
             $table->text('content');
             $table->timestamps();
         });

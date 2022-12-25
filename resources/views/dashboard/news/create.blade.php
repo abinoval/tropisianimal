@@ -21,6 +21,7 @@
                     <x-adminlte-input-file name="img_3" label="Image 3" fgroup-class="col-md-6"
                         placeholder="Choose a file..." />
                 </div>
+                <x-adminlte-textarea name="excerpt" label="Excerpt" enable-old-support="true" />
                 <input id="content" type="hidden" name="content" value="{{ old('content') }}">
                 <div class="mb-3">
                     <trix-editor input="content" class="@error('content') border border-danger @enderror"></trix-editor>

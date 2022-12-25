@@ -16,32 +16,31 @@
                     <p class="about__caption">
                         {{ $news->first()->excerpt }}
                     </p>
-                    {{-- <p class="about__subcaption">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem cupiditate
-                        eaque, delectus aperiam voluptas dolores dolorum nemo officia. Beatae
-                        modi ad ea pariatur quaerat incidunt cum debitis eveniet reprehenderit
-                        hic.
-                    </p> --}}
+                    <p class="about__subcaption">
+                        {{ $news->first()->subcapt }}
+                    </p>
                     <a href="{{ route('show-news', $news->first()->id) }}" class="btn btn-success">baca selengkapnya <i
                             class="bi bi-arrow-right"></i></a>
                 </div>
                 <div class="col-lg-6 order-lg-1">
-                    <div class="row g-3 mb-3">
-                        <div class="col">
-                            <img
-                                class="w-100 h-100"
-                                src="/storage/{{ $news->first()->hero_img }}"
-                                alt="" />
-                        </div>
-                        <div class="col d-flex flex-column gap-3">
-                            <img
-                                class="w-100 h-40"
-                                src="/storage/{{ $news->first()->img_2 }}"
-                                alt="" />
-                            <img
-                                class="w-100 h-60"
-                                src="/storage/{{ $news->first()->img_3 }}"
-                                alt="" />
+                    <div class="ratio ratio-1x1">
+                        <div class="row g-3 mb-3">
+                            <div class="col h-100">
+                                <img
+                                    class="w-100 h-100"
+                                    src="/storage/{{ $news->first()->hero_img }}"
+                                    alt="" />
+                            </div>
+                            <div class="col d-flex flex-column gap-3 h-100">
+                                <img
+                                    class="w-100 h-40"
+                                    src="/storage/{{ $news->first()->img_2 }}"
+                                    alt="" />
+                                <img
+                                    class="w-100 h-60"
+                                    src="/storage/{{ $news->first()->img_3 }}"
+                                    alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>

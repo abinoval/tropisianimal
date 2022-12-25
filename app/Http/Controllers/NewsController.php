@@ -42,12 +42,14 @@ class NewsController extends Controller
         $validatedData = $request->validate([
             'title' => ['required', 'string'],
             'content' => ['required', 'string'],
+            'excerpt' => ['required', 'string'],
             'hero_img' => ['required', File::types(['jpg', 'jpeg', 'png', 'webp'])->max(5 * 1024)],
             'img_2' => ['required', File::types(['jpg', 'jpeg', 'png', 'webp'])->max(5 * 1024)],
             'img_3' => ['required', File::types(['jpg', 'jpeg', 'png', 'webp'])->max(5 * 1024)],
         ]);
 
-        $validatedData['excerpt'] = str(strip_tags($request->content))->limit(200);
+        $validatedData['excerpt'] = str($request->excerpt)->limit(252);
+        $validatedData['subcapt'] = str(strip_tags($request->content))->limit(200);
         $validatedData['slug'] = str($request->title)->slug() . '-' . str()->random(5);
 
         $validatedData['hero_img'] = $request->file('hero_img')->store('upload');
